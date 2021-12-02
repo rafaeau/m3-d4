@@ -20,8 +20,8 @@ const displayBooks = () => {
                         <button type="button" onclick="addToCart(event)" class="btn btn-sm btn-outline-secondary">
                             Add
                         </button>
-                        <button type="button" onclick="hidePics(event)" class="btn btn-sm btn-outline-secondary">
-                            Hide
+                        <button type="button" onclick="removeBook(event)" class="btn btn-sm btn-outline-secondary">
+                            Skip
                         </button>
                     </div>
                 </div>
@@ -44,5 +44,8 @@ const addToCart = (event) => {
     const cloneNode = event.path[3].cloneNode(true)
     booksCart.appendChild(cloneNode)
     event.path[3].style.borderColor = "red"
-    console.log(booksCart)
+}
+
+const removeBook = (event) => {
+    event.path[3].remove()
 }
